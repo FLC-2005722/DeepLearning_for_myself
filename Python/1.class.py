@@ -9,4 +9,31 @@ class Animal:
         self.name = name
         self.age = age
     def speak(self):
-        print(f"{self.name} is speaking")
+        print(f"{self.name} is making a sound.")
+
+# 2.创建对象
+dog = Animal("Dog", 5)
+print(dog.name)  # 输出: Dog
+print(dog.age)   # 输出: 5
+dog.speak()      # 输出: Dog is speaking
+
+# 3.继承类
+class Dog(Animal):
+    '''
+    Dog类继承自Animal类
+    可以重写父类的构造函数
+    '''
+    def speak(self):
+        print(f"{self.name} says Woof!")
+
+# 4.调用父类的方法
+class Dog(Animal):
+    '''
+    Dog类继承自Animal类
+    可以调用父类的构造函数和方法
+    '''
+    def speak(self):
+        super().speak()  # 调用父类的speak方法
+
+dog = Dog("Buddy", 3)
+dog.speak() 
