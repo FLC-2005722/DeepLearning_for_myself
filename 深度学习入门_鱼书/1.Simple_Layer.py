@@ -26,7 +26,7 @@ class MulLayer:
 class AddLayer:
     def __init__(self):
         '''
-
+        加法层不需要初始化参数，关键在于反向传播时是否需要用到前向传播中的输入值
         '''
         pass
 
