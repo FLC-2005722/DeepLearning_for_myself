@@ -5,7 +5,7 @@
 - 2025年8月11日
   - 深度学习入门_鱼书/1.Simple_Layer.py
     - ReLU层的实现
-    - signed层的实现
+    - sigmoid层的实现
 
 - 2025年8月9日
   - 深度学习入门_鱼书/1.Simple_Layer.py
