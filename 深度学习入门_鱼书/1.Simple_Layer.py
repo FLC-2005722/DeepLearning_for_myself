@@ -14,6 +14,9 @@ __init__中是否要定义self.x和self.y
 取决于是否需要在backward中使用前向传播的输入值
 '''
 
+import numpy as np
+
+
 # 乘法层
 class MulLayer:
     def __init__(self):
@@ -74,5 +77,14 @@ class AffineLayerL:
         self.W = W
         self.b = b
         self.x = None
-
-
+        self.dW = None
+        self.db = None
+    def forward(self, x):
+        self.x = x
+        out = np.dot(self.x, self.W) + self.b
+        return out
+    def backward(self, dout):
+        self.dW = np.dot(dout, self.x.T)
+        self.db = np.sum(dout, axis=0) #每次求和都会消除指定的维度，保留其他维度
+        dx = np.dot(dout, self.W.T)
+        return dx
