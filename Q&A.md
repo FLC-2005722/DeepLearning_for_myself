@@ -1,8 +1,13 @@
 # Q&A
 
 1. 什么是Affine层，Affine层有什么作用
-
+   1. 本质上就是一个全连接层（Fully Connected Layer，或称线性层）
 2. Affine-ReLU被Conv-ReLU-Pooling替换有什么作用？
+    1. Affine-ReLU通常被用在多层感知机（MLP）或在卷积神经网络的最后（全连接层）用于高维度特征映射到输出类别
+    2. Conv-ReLU-Pooling层
+        1. **Conv层**：执行卷积运算，提取输入数据中的局部特征。卷积层通过权重共享和局部连接，能够有效捕捉空间特征。
+        2. **ReLU层**：同样应用非线性激活函数（ReLU），增强模型的非线性能力。
+        3. **Pooling层**：通常使用最大池化（Max Pooling）或平均池化（Average Pooling），对特征图进行下采样，减少特征图的尺寸，增加特征的平移不变性，降低计算复杂度。
 3. 书中说Affine-ReLU，Affine-Softmax组合都是常见的组合，为什么要这样组合？
 4. 深度学习中的块和层有什么关系？什么是层？什么是块？
 5. CNN中的一些特有术语是什么意思：填充，步幅
